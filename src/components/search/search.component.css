@@ -39,5 +39,5 @@
 .note{
   font-size: 0.8rem ;
   margin: 0% ;
-  
+  margin-left: -10px !important;
 }
