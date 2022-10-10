@@ -11,3 +11,6 @@
 .row>:not(.submit-button){
   padding:0 !important;
 }
+.modal-header{
+  background-color: #00B1FC;
+}
