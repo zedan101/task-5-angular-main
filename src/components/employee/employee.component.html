@@ -1,0 +1,21 @@
+<div class="employee d-flex" (click)="openVerticallyCentered(editForm)" (click)="triggerEdit()">
+        <div>
+            <img src="../../assets/profile.png" class="picture p-2">
+        </div>
+        <div class="p-2 pe-4">
+            <h5 class="employee-name text-nowrap m-0"><a href="#" class=" employee-name-a text-decoration-none">{{employee.preferredName}}</a></h5>
+            <p class="job-title text-nowrap m-0 text-capitalize">{{employee.jobTitle}}</p>
+            <p class="department text-nowrap m-0">{{employee.department}} Department</p>
+            <span class="d-flex">
+                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-square-phone"></i></a>
+                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-comment"></i></a>
+                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-star"></i></a>
+                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-heart"></i></a>
+            </span>
+        </div>      
+</div>
+  
+  <ng-template #editForm let-modal>
+      <app-popup></app-popup>
+  </ng-template>

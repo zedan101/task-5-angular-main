@@ -1,0 +1,28 @@
+.logo{
+  width: 30%;
+  height: auto;
+}
+
+.profile-name{
+  font-size: 160%;
+}
+.profile{
+ width: 10%;
+ height: 70%;
+}
+header h2{
+  color: #00B1FC;
+  font-weight: normal;
+}
+header h2 span{
+  color: #919090;
+}
+.head-txt span{
+  font-size: 110%;
+}
+.head-txt h2{
+  margin-bottom: 0%;
+}
+hr{
+  margin: 0%;
+}

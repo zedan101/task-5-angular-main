@@ -1,0 +1,17 @@
+<section class="container">
+  <app-header class="row"></app-header>
+  <main class="row">
+    <div class="filters col-lg-3">
+      <app-filters
+        *ngFor="let f of filters"
+        [filter]="f[1]"
+        [title]="f[0]"
+      ></app-filters>
+    </div>
+    <div class="col-lg-9">
+      <app-search></app-search>
+      <app-employees class="employees row pt-3 px-3"></app-employees>
+      
+    </div>
+  </main>
+</section>

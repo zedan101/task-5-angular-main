@@ -1,0 +1,61 @@
+.employee{
+    width:17.5em;
+    background-color:rgba(1,1,1,0.1) ;
+    height: fit-content;
+}
+
+.picture{
+    height:80px;
+    width:80px;
+}
+.employee-name{
+    font-size:0.8rem;
+    font-weight:500;
+    word-spacing: 1px;
+}
+.employee-name-a{
+    color:black ;
+}
+.job-title{
+    font-size:0.7rem;
+    color: rgba(1,1,1,0.6);
+    word-spacing: 1px;
+}
+.department{
+    font-size:0.7rem;
+    color: rgba(1,1,1,0.6);
+    word-spacing: 1px;
+}
+.contact-icon{
+    color:rgba(1,1,1,0.3);
+    font-size: 0.8rem;
+}
+
+
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+}
+.dark-modal .close {
+    color: white;
+}
+.light-blue-backdrop {
+    background-color: #5cb3fd;
+}
+
+.show-employee-modal-picture{
+    height:10rem;
+    width:10rem;
+    border-radius: 10px;
+}
+.show-employee-modal-label{
+    color:black;
+    font-size: small;
+}
+.row>*{
+    padding:0px;
+}
+.br{
+    border-bottom: 1px solid;
+}

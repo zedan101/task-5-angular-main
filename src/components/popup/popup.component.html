@@ -1,0 +1,80 @@
+<div class="modal-header">
+  <h5 class="modal-title text-capitalize">{{employeeFormTitle}}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+  <form class="px-3" [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+ 
+    <!-- Names -->
+    <div class="row mb-3">
+      <div class="form-floating col">
+          <input type="text" class="form-control" placeholder="First Name" name="firstName" formControlName="firstName" required #first (input)="setPrefName(first.value,last.value)">
+          <label for="FirstName">First Name</label>
+          <span *ngIf="firstName && firstName.invalid && firstName.touched" class="text-capitalize text-danger">invalid name</span>
+      </div>
+      <div class="form-floating col ms-3">
+          <input type="text" class="form-control" placeholder="Last Name" name="lastName" formControlName="lastName" #last (input)="setPrefName(first.value,last.value)">
+          <label for="LastName">Last Name</label>
+      </div>
+    </div>
+       <!-- Perferred Name -->
+       <div class="row mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" placeholder="Preferred Name" name="preferredName" formControlName="preferredName" required>
+            <label for="PreferredName">Preferred Name</label>
+        </div>
+      </div>
+    <!-- Email -->
+    <div class="row mb-3">
+      <div class="form-floating">
+          <input type="email" class="form-control" placeholder="name@example.com" name="email" formControlName="email" required>
+          <label for="Email">Email address</label>
+          <span *ngIf="email && email.invalid && email.touched" class="text-capitalize text-danger">invalid email</span>
+      </div>
+    </div>
+    <!-- Number and skype -->
+    <div class="row mb-3">
+      <div class="form-floating number col">
+          <input type="tel" class="form-control" placeholder="1234567890" name="phoneNumber" formControlName="phoneNumber" required>
+          <label for="Number">Phone Number</label>
+          <span *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched" class="text-capitalize text-danger">invalid phone number</span>
+      </div>
+      <div class="form-floating col ms-3">
+          <input type="tel" class="form-control" placeholder="live:xyz" name="skypeId" formControlName="skypeId" required>
+          <label for="SkypeID">SkypeID</label>
+          <span *ngIf="skypeId && skypeId.invalid && skypeId.touched" class="text-capitalize text-danger">invalid skypeid! should start with live:</span>
+      </div>
+    </div>
+    <!-- Job title and department -->
+    <div class="row mb-3">
+      <div class="form-floating col">
+          <select class="form-select text-capitalize" formControlName="jobTitle" required>
+              <option *ngFor="let jobTitle of jobTitlesList" [ngValue]="jobTitle" class="text-capitalize">{{jobTitle}}</option>
+          </select>
+          <label for="JobTitle">Job Title</label>
+      </div>
+      <div class="form-floating col ms-3">
+          <select class="form-select text-capitalize" name="department" formControlName="department" required>
+              <option value="IT" class="text-capitalize">IT</option>
+              <option value="HR" class="text-capitalize">human resources</option>
+              <option value="MD" class="text-capitalize">MD</option>
+              <option value="Sales" class="text-capitalize">sales</option>
+          </select>
+          <label for="Department">Department</label>
+      </div>
+    </div>
+    <!-- office -->
+    <div class="row mb-3">
+      <div class="form-floating">
+          <select class="form-select text-capitalize" name="office" formControlName="office" required>
+            <option *ngFor="let office of officeList" [ngValue]="office">{{ office }}</option>
+          </select>
+          <label for="Office">Office</label>
+      </div>
+    </div>
+    <!-- Submit button -->
+    <div class="row">
+      <button type="submit" class="submit-button btn btn-primary fw-bold py-2" [disabled]="employeeForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
