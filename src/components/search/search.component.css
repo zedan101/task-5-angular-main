@@ -27,6 +27,7 @@
 }
 .clear-button{
   background-color:rgba(105,186,0,255);
+  border: none;
 }
 .filter-options{
   border: 1px solid rgba(1,1,1,0.3);
@@ -35,6 +36,7 @@
 }
 .add-employee{
   background-color: rgba(0,176,253,255);
+  border: none;
 }
 .note{
   font-size: 0.8rem ;

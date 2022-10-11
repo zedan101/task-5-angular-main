@@ -3,3 +3,18 @@
     box-sizing: content-box;
     height:50vh;
 }
+.mobile{
+    display: none;
+}
+.webview{
+    display: block;
+}
+
+@media (max-width: 780px) {
+    .mobile{
+        display: block;
+    }
+    .webview{
+        display: none;
+    }
+}

@@ -14,11 +14,11 @@
       [(ngModel)]="searchInput"
       (input)="search()"
     />
-    <a
+    <button
       href="#"
       class="col-md-1 clear-button text-capitalize text-decoration-none my-auto px-3 py-1 text-white ms-3 me-5"
       (click)="showEmployees()"
-      >clear</a
+      >clear</button
     >
     <p class="col-md-1 filter-para my-auto mx-2">Filter by</p>
     <select
@@ -38,11 +38,10 @@
       <option value="phoneNumber" class="text-capitalize">phone number</option>
       <option value="skypeId" class="text-capitalize">skype id</option>
     </select>
-    <a
-      href="#"
+    <button
       class="col-md-2 add-employee text-capitalize ms-5 text-decoration-none text-white my-auto px-auto py-1 fw-bold"
       (click)="openVerticallyCentered(addEmployee)"
-      >add employee</a
+      >add employee</button
     >
   
 </div>

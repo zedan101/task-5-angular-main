@@ -1,0 +1,24 @@
+<div class="body">
+    <img src="../../assets/saketa-logo.svg" alt="logo" class="logo float-end">
+    <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="m-4 pt-4 sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+        <div class="main-content-wrapper">
+            <div class="bg-secondary p-5">
+                <h3>FILTERS</h3>
+           <app-filters *ngFor="let f of filters"
+           [filter]="f[1]"
+           [title]="f[0]"></app-filters></div>
+        </div>
+    </div>
+    <div class="d-block mt-5 pt-5"><h2 class="d-flex justify-content-start">Employee Directory</h2>
+    <span class="d-flex justify-content-start">The ultimate People Directory Experiance</span></div>
+    <div class="d-flex justify-content-end"><h2 class="profile-name mt-3 pe-3">Weclome,<span>Andrew Philip</span></h2>
+    <img class="profile mt-1" src="../../assets/profile.png" alt="user"></div>
+</div>   
+  
+  
