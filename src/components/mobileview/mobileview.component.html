@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body container">
     <img src="../../assets/saketa-logo.svg" alt="logo" class="logo float-end">
     <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
     <label for="openSidebarMenu" class="m-4 pt-4 sidebarIconToggle">
@@ -12,13 +12,66 @@
                 <h3>FILTERS</h3>
            <app-filters *ngFor="let f of filters"
            [filter]="f[1]"
-           [title]="f[0]"></app-filters></div>
+           [title]="f[0]"></app-filters>
+            <h3>SEARCH</h3>
+            
+            <div class="alpha-search px-0 mt-2">
+            <button class="btn btn-primary" type="submit" (click)="showEmployees()"><img src="./assets/person.svg" alt="person"></button>
+            <button *ngFor="let i of alphabets" class="btn btn-primary" type="submit" (click)="searchByAlphabets(i)">{{ i }}</button>
+            </div>
+        
+        </div>
         </div>
     </div>
     <div class="d-block mt-5 pt-5"><h2 class="d-flex justify-content-start">Employee Directory</h2>
     <span class="d-flex justify-content-start">The ultimate People Directory Experiance</span></div>
     <div class="d-flex justify-content-end"><h2 class="profile-name mt-3 pe-3">Weclome,<span>Andrew Philip</span></h2>
     <img class="profile mt-1" src="../../assets/profile.png" alt="user"></div>
+    
+    <div class="row mt-3">
+        <button
+        class="col add-employee text-capitalize text-decoration-none text-white fw-bold"
+        (click)="openVerticallyCentered(addEmployee)"
+        >add employee</button
+      >
+    <input
+      type="text"
+      class="col search-input mx-3 my-auto pe-lg-5"
+      placeholder="Search Employee"
+      [(ngModel)]="searchInput"
+      (input)="search()"
+    />
+    <button
+    href="#"
+    class="col clear-button text-capitalize text-decoration-none text-white"
+    (click)="showEmployees()"
+    >clear</button
+  ></div>
+
+   <div class="d-flex justify-content-center mt-3">
+    <p class="filter-para my-auto me-2">Filter by</p>
+    <select
+      id="filter"
+      class="filter-options"
+      [(ngModel)]="searchFilterInput"
+    >
+      <option value="preferredName" class="text-capitalize">
+        preferred name
+      </option>
+      <option value="firstName" class="text-capitalize">first name</option>
+      <option value="lastName" class="text-capitalize">last name</option>
+      <option value="email" class="text-capitalize">email</option>
+      <option value="jobTitle" class="text-capitalize">job title</option>
+      <option value="office" class="text-capitalize">office</option>
+      <option value="department" class="text-capitalize">department</option>
+      <option value="phoneNumber" class="text-capitalize">phone number</option>
+      <option value="skypeId" class="text-capitalize">skype id</option>
+    </select>
+   </div>
+
+    
 </div>   
   
-  
+<ng-template #addEmployee let-modal>
+    <app-popup></app-popup>
+  </ng-template>

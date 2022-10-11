@@ -12,8 +12,9 @@
     #sidebarMenu {
         height: 200px; /*change here related your menu height*/
         position: fixed;
-        overflow: none;
+        overflow-y: scroll;
         width: 200px;
+        height: 100%;
         z-index: 10;
         transform: translateY(-2000px); /*change here related your menu height*/
         margin: 0%;
@@ -97,10 +98,30 @@
       }
       
       .profile-name{
-        font-size: 160%;
+        font-size: 100%;
       }
       .profile{
-       width: 10%;
-       height: 70%;
+       width: 40px;
+       height: 50px;
       }   
- 
+      .add-employee{
+        background-color: rgba(0,176,253,255);
+        border: none;
+      }
+      .clear-button{
+        background-color:rgba(105,186,0,255);
+        border: none;
+      }
+      .filter-options{
+        border: 1px solid rgba(1,1,1,0.3);
+        text-transform: capitalize;
+        color:rgba(1,1,1,0.6);
+      }
+      .alpha-search button{
+        text-transform: uppercase;
+        padding: 10px !important;
+        margin-right: 4.5px;
+        background-color: #00B1FC;
+        border: 1px solid #00B1FC;
+        border-radius: 0%;
+      }
