@@ -1,0 +1,13 @@
+.alpha-search li{
+    text-transform: uppercase;
+    color: #080808;
+    font-size: 90%;
+    list-style-type: none;
+  }
+
+  .alpha-search a{
+    text-transform: uppercase;
+    color: #6e6c6c;
+    
+    text-decoration: none;
+  }

@@ -14,6 +14,7 @@ import { EmpDataService } from './services/emp-data.service';
 import { FiltersPipe } from './pipes/filters.pipe';
 import { MobileviewComponent } from '../components/mobileview/mobileview.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { MobilemainComponent } from '../components/mobilemain/mobilemain.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
     PopUpComponent,
     FiltersPipe,
     MobileviewComponent,
-    SidebarComponent
+    SidebarComponent,
+    MobilemainComponent
     ],
   imports: [
     BrowserModule,
