@@ -10,7 +10,7 @@
     display: block;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 480px) {
     .mobile{
         display: block;
     }

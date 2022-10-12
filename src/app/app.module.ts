@@ -13,6 +13,7 @@ import { PopUpComponent } from '../components/popup/popup.component'
 import { EmpDataService } from './services/emp-data.service';
 import { FiltersPipe } from './pipes/filters.pipe';
 import { MobileviewComponent } from '../components/mobileview/mobileview.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MobileviewComponent } from '../components/mobileview/mobileview.compone
     EmployeeComponent,
     PopUpComponent,
     FiltersPipe,
-    MobileviewComponent
+    MobileviewComponent,
+    SidebarComponent
     ],
   imports: [
     BrowserModule,

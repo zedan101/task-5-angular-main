@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Filters from '../../assets/static files/data';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EmpDataService } from '../../app/services/emp-data.service';
 
@@ -48,5 +48,4 @@ export class MobileviewComponent implements OnInit {
     this.employeeService.sendSearchEmployees(searchedEmployees)
   }
 
-  filters=Filters.filters;
 }

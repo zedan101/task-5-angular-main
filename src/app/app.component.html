@@ -1,7 +1,7 @@
 
-<section class="container">
-  <app-mobileview class="mobile overflow-auto "></app-mobileview>
-  <app-header class="row webview"></app-header>
+<app-mobileview class="mobile"></app-mobileview>
+<section class="container webview">
+  <app-header class="row "></app-header>
   <main class="row">
     <div class="filters webview col-lg-3 mt-4 p-0">
       <app-filters
@@ -10,8 +10,8 @@
         [title]="f[0]"
       ></app-filters>
     </div>
-    <div class="col-lg-9 mt-4">
-      <app-search class="webview"></app-search>
+    <div class="col-lg-9 mt-4 webview">
+      <app-search></app-search>
       <app-employees class="employees row pt-3 px-3"></app-employees>
       
     </div>
