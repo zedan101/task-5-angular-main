@@ -4,6 +4,7 @@
     height: fit-content;
 }
 
+
 .picture{
     height:80px;
     width:80px;
@@ -58,4 +59,12 @@
 }
 .br{
     border-bottom: 1px solid;
+}
+.btns button{
+    border: none;
+    background-color: transparent;
+    color: #5cb3fd;
+}
+.btns button:nth-child(2){
+    color: #292b2c;
 }

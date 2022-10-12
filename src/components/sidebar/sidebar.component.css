@@ -13,7 +13,7 @@
         position: fixed;
         overflow-y: scroll;
         width: 300px;
-        height: 100%;
+        height: auto;
         z-index: 10;
         transform: translateY(-2000px); /*change here related your menu height*/
         margin: 0%;
@@ -93,7 +93,11 @@
     
       
       .profile-name{
-        font-size: 100%;
+        font-size: 130%;
+        color: rgb(76, 171, 248);
+      }
+      .profile-name span{
+        color: black;
       }
       .profile{
        width: 40px;

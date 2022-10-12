@@ -1,21 +1,95 @@
-<div class="employee d-flex" (click)="openVerticallyCentered(editForm)" (click)="triggerEdit()">
-        <div>
-            <img src="../../assets/profile.png" class="picture p-2">
-        </div>
-        <div class="p-2 pe-4">
-            <h5 class="employee-name text-nowrap m-0"><a href="#" class=" employee-name-a text-decoration-none">{{employee.preferredName}}</a></h5>
-            <p class="job-title text-nowrap m-0 text-capitalize">{{employee.jobTitle}}</p>
-            <p class="department text-nowrap m-0">{{employee.department}} Department</p>
-            <span class="d-flex">
-                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-square-phone"></i></a>
-                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-envelope"></i></a>
-                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-comment"></i></a>
-                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-star"></i></a>
-                <a href="#" class="contact-icon me-2"><i class="fa-solid fa-heart"></i></a>
-            </span>
-        </div>      
+<div
+  class="employee d-flex"
+  (click)="openVerticallyCentered(content)"
+  (click)="triggerEdit()"
+>
+  <div>
+    <img src="../../assets/profile.png" class="picture p-2" />
+  </div>
+  <div class="p-2 pe-4">
+    <h5 class="employee-name text-nowrap m-0">
+      <a href="#" class="employee-name-a text-decoration-none">{{
+        employee.preferredName
+      }}</a>
+    </h5>
+    <p class="job-title text-nowrap m-0 text-capitalize">
+      {{ employee.jobTitle }}
+    </p>
+    <p class="department text-nowrap m-0">
+      {{ employee.department }} Department
+    </p>
+    <span class="d-flex">
+      <a href="#" class="contact-icon me-2"
+        ><i class="fa-solid fa-square-phone"></i
+      ></a>
+      <a href="#" class="contact-icon me-2"
+        ><i class="fa-solid fa-envelope"></i
+      ></a>
+      <a href="#" class="contact-icon me-2"
+        ><i class="fa-solid fa-comment"></i
+      ></a>
+      <a href="#" class="contact-icon me-2"><i class="fa-solid fa-star"></i></a>
+      <a href="#" class="contact-icon me-2"
+        ><i class="fa-solid fa-heart"></i
+      ></a>
+    </span>
+  </div>
 </div>
-  
-  <ng-template #editForm let-modal>
-      <app-popup></app-popup>
-  </ng-template>
+
+<ng-template #content let-modal>
+  <div class="modal-body mx-auto my-3">
+    <img class="picture" src="../../assets/profile.png" alt="profile" />
+    <div class="row py-1">
+      <div class="d-flex">
+        <p class="fw-bold text-dark me-2 mb-0">{{ employee.firstName }}</p>
+        <p class="fw-bold text-dark mb-0">{{ employee.lastName }}</p>
+      </div>
+      <div class="row py-1 ps-2">
+        <p class="text-dark mb-0">{{ employee.jobTitle }}</p>
+        <p class="text-dark mb-0">{{ employee.department }}</p>
+        <p class="text-dark mb-0">{{ employee.office }}</p>
+      </div>
+    </div>
+    <div class="row py-1">
+      <label for="email" class="show-employee-modal-label"
+        >Email</label><i class="float-end bi bi-envelope-fill"></i>
+      <p class="fw-bold text-primary mb-0">{{ employee.email }}</p>
+    </div>
+
+    <div class="row">
+      <label for="number" class="show-employee-modal-label"
+        >Phone-Number</label><i class="float-end bi bi-telephone-fill"></i>
+      <p class="text-primary fw-bold mb-0">{{ employee.phoneNumber }}</p>
+    </div>
+    <div class="row">
+      <label for="skypeid" class="show-employee-modal-label"
+        >Skype ID &#xF656;</label
+      >
+      <p class="fw-bold text-primary mb-0">{{ employee.skypeId }}</p>
+    </div>
+  </div>
+  <div class=" btns row">
+   
+    <button
+    type="button"
+    class="col display-4 fw-bold m-2"
+    (click)="modal.close('Close click')"
+  >
+    <i class="bi bi-trash-fill"></i>
+  </button>
+   
+    <button
+      type="button"
+      class="col display-4 edit-btn fw-bold m-2"
+      (click)="openVerticallyCentered(editForm)"
+      (click)="triggerEdit()"
+    >
+      <i class="bi bi-pencil-fill"></i>
+    </button>
+ 
+  </div>
+</ng-template>
+
+<ng-template #editForm let-modal>
+  <app-popup></app-popup>
+</ng-template>
