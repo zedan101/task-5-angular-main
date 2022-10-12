@@ -51,21 +51,32 @@
       </div>
     </div>
     <div class="row py-1">
+        <div class="col">
       <label for="email" class="show-employee-modal-label"
-        >Email</label><i class="float-end bi bi-envelope-fill"></i>
+        >Email</label>
       <p class="fw-bold text-primary mb-0">{{ employee.email }}</p>
+    </div>
+      <i class="col d-flex justify-content-end bi bi-envelope-fill fs-3 mt-2"></i>
     </div>
 
     <div class="row">
+        <div class="col">
       <label for="number" class="show-employee-modal-label"
-        >Phone-Number</label><i class="float-end bi bi-telephone-fill"></i>
+        >Phone-Number</label>
       <p class="text-primary fw-bold mb-0">{{ employee.phoneNumber }}</p>
     </div>
+      <i class="col d-flex justify-content-end  bi bi-telephone-fill fs-3 mt-2"></i>
+    </div>
     <div class="row">
+    <div class="col">
       <label for="skypeid" class="show-employee-modal-label"
-        >Skype ID &#xF656;</label
+        >Skype ID</label
       >
       <p class="fw-bold text-primary mb-0">{{ employee.skypeId }}</p>
+    </div>
+    <div class="col d-flex justify-content-end mt-1 ms-2">
+    <img src="../../assets/skype.svg" alt="skype" class="skype">
+    </div>
     </div>
   </div>
   <div class=" btns row">

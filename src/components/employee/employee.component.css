@@ -68,3 +68,9 @@
 .btns button:nth-child(2){
     color: #292b2c;
 }
+
+.skype{
+    width: 26px;
+    height: 26px;
+    color: #292b2c;
+}
