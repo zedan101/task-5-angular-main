@@ -74,3 +74,18 @@
     height: 26px;
     color: #292b2c;
 }
+
+@media (max-width: 480px){
+    .mob-filt{
+        display: none;
+    }
+    .contact-icon{
+        display: none;
+    }
+    .employee-name {
+        padding-left: 10%;
+        padding-top: 20%;
+        font-size: 110%;
+        font-weight: normal;
+    }
+}
