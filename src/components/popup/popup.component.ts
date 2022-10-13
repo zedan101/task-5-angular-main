@@ -51,6 +51,7 @@ export class PopUpComponent implements OnInit {
       jobTitle: new FormControl(employee.jobTitle|| this.jobTitleValue,[Validators.required]),
       department: new FormControl(employee.department,[Validators.required]),
       office: new FormControl(employee.office,[Validators.required]),
+      picture:new FormControl(employee.picture),
       
     })
   }
@@ -66,7 +67,7 @@ export class PopUpComponent implements OnInit {
     jobTitle: new FormControl([Validators.required]),
     department: new FormControl([Validators.required]),
     office: new FormControl([Validators.required]),
-    
+    picture: new FormControl(''),
   })
 
   saveEmployee():void{

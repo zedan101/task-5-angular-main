@@ -6,14 +6,16 @@ import { Subject } from 'rxjs';
 })
 export class EmpDataService {
 
-  constructor() {this.pushEmployees(this.employees); }
+  constructor() {}
   public employees;
   
   pushEmployees(employees:object):void { 
+   
     if(employees!=null){
     window.localStorage.setItem("employees", JSON.stringify(employees));
   }
   }
+ 
 
   getEmployees():any {
     return JSON.parse(window.localStorage.getItem("employees") || "[]");
@@ -21,7 +23,7 @@ export class EmpDataService {
   
   addEmployee(e:any):void {
     let employees=this.getEmployees();
-    let employee=new Employee(e.id,e.firstName,e.lastName,e.preferredName,e.email,e.jobTitle,e.department,e.office,e.phoneNumber,e.skypeId);
+    let employee=new Employee(e.id,e.firstName,e.lastName,e.preferredName,e.email,e.jobTitle,e.department,e.office,e.phoneNumber,e.skypeId,e.picture);
     employees.push(employee);
     this.pushEmployees(employees);
     this.sendAllEmployees(employees);
@@ -85,9 +87,10 @@ class Employee{
   jobTitle:string;
   department:string;
   office:string;
+  picture:string;
  
 
-  constructor(id:number,firstname:string,lastname:string,preferredname:string,email:string,jobtitle:string,department:string,office:string,phonenumber:string,skypeid:string) {
+  constructor(id:number,firstname:string,lastname:string,preferredname:string,email:string,jobtitle:string,department:string,office:string,phonenumber:string,skypeid:string,picture:string) {
     this.id=id|| JSON.parse(window.localStorage.getItem("employees") || "[]").length+1;
     this.preferredName = preferredname;
     this.firstName = firstname;
@@ -98,7 +101,7 @@ class Employee{
     this.jobTitle = jobtitle;
     this.department = department;
     this.office = office;
-    
+    this.picture = picture;
   }
   
 }

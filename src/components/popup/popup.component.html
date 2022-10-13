@@ -72,6 +72,16 @@
           <label for="Office">Office</label>
       </div>
     </div>
+
+    <!-- profile image -->
+
+    <div class="row mb-3">
+      <div class="form-floating">
+          <input type="text" class="form-control" placeholder="Image URL here" name="picture" required formControlName="picture">
+            <label for="Image">Profile Picture (Image URL)</label>
+      </div>
+    </div>
+
     <!-- Submit button -->
     <div class="row">
       <button type="submit" class="submit-button btn btn-primary fw-bold py-2" [disabled]="employeeForm.invalid">Submit</button>

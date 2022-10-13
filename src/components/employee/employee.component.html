@@ -4,7 +4,7 @@
   (click)="triggerEdit()"
 >
   <div>
-    <img src="../../assets/profile.png" class="picture p-2" />
+    <img src={{employee.picture}} class="picture p-2" />
   </div>
   <div class="p-2 pe-4">
     <h5 class="employee-name text-nowrap">
@@ -38,7 +38,7 @@
 
 <ng-template #content let-modal>
   <div class="modal-body mx-auto my-3">
-    <img class="picture" src="../../assets/profile.png" alt="profile" />
+    <img class="picture" src={{employee.picture}} alt="profile" />
     <div class="row py-1">
       <div class="d-flex">
         <p class="fw-bold text-dark me-2 mb-0">{{ employee.firstName }}</p>
