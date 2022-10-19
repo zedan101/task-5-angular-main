@@ -1,4 +1,6 @@
-<app-employee class="employee mb-3 col" *ngFor="let e of employees" [employee]=e></app-employee>
-
-
-
+<div class="row" *ngIf="!scrCheck">
+<app-employee  class="employee mb-3 col" *ngFor="let e of employees" [employee]=e></app-employee>
+</div>
+<div class="d-flex flex-column justify-content-center" *ngIf="scrCheck">
+<app-editdatamob  class="employee mb-2" *ngFor="let e of employees" [employee]=e></app-editdatamob>
+</div>

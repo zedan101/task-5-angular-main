@@ -21,8 +21,9 @@ export class EmpDataService {
     return JSON.parse(window.localStorage.getItem("employees") || "[]");
   }
   
-  addEmployee(e:any):void {
+  addEmployee(e:any,img:any):void {
     let employees=this.getEmployees();
+    e.picture=img;
     let employee=new Employee(e.id,e.firstName,e.lastName,e.preferredName,e.email,e.jobTitle,e.department,e.office,e.phoneNumber,e.skypeId,e.picture);
     employees.push(employee);
     this.pushEmployees(employees);

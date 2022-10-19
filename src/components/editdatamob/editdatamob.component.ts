@@ -3,11 +3,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EmpDataService } from '../../app/services/emp-data.service';
 
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  selector: 'app-editdatamob',
+  templateUrl: './editdatamob.component.html',
+  styleUrls: ['./editdatamob.component.css']
 })
-export class EmployeeComponent implements AfterViewInit {
+export class EditdatamobComponent implements AfterViewInit {
+
+  
   constructor(private modalService: NgbModal,private employeeService:EmpDataService) { }
 
   @Input() employee:any;
@@ -18,7 +20,7 @@ export class EmployeeComponent implements AfterViewInit {
   }
   openVerticallyCentered(content: any) {
     this.employeeService.employeeFormTitle="edit employee"
-  this.modalService.open(content, { centered: true });
+  this.modalService.open(content, {windowClass : 'mob-editform-width' });
   }
 
   triggerEdit():void{

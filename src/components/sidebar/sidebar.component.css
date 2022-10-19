@@ -9,13 +9,12 @@
         z-index: 12;
     }
     #sidebarMenu {
-        height: 200px; /*change here related your menu height*/
-        position: fixed;
+        background-color: white;
+        position: absolute;
         overflow-y: scroll;
         width: 300px;
-        height: auto;
         z-index: 10;
-        transform: translateY(-2000px); /*change here related your menu height*/
+        transform: translateY(-2000px); 
         margin: 0%;
     }
   
@@ -26,7 +25,7 @@
         transform: translatey(0);
         left: 0%;
         top: 0%;
-         /*change here related your top menu height*/
+         
     }
     input[type=checkbox] {
         transition: all 0.3s;
@@ -45,6 +44,7 @@
         top:10px;
         
     }
+  
     .spinner {
         transition: all 0.3s;
         box-sizing: border-box;
@@ -104,3 +104,11 @@
        height: 50px;
        
       }   
+    .footer{
+        margin-top: 25%;
+        align-items:center;
+    }
+    .footer img{
+        width: 180px;
+        
+    }

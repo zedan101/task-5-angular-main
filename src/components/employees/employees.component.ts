@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { HostListener,Component, OnInit } from '@angular/core';
 import {EmpDataService} from '../../app/services/emp-data.service';
 
 @Component({
@@ -7,7 +7,17 @@ import {EmpDataService} from '../../app/services/emp-data.service';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
+  scrWidth:any;
+  scrCheck:boolean;
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+        this.scrWidth = window.innerWidth;
+  }
   constructor(private employeeService:EmpDataService) {
+    this.getScreenSize()
+    if(this.scrWidth<=480){
+      this.scrCheck=true;
+    }
   }
   ngOnInit(): void {
     this.employees = JSON.parse(window.localStorage.getItem("employees") || "[]");

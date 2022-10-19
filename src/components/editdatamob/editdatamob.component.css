@@ -1,0 +1,120 @@
+::ng-deep .mob-editform-width .modal-dialog{
+
+    width: 101%;
+    height: 100%;
+    margin: 0px ;
+    position: absolute;
+    bottom: -745px;
+    -webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards;
+    
+    
+}
+@-webkit-keyframes slide {
+    100% { bottom: 0; }
+}
+
+@keyframes slide {
+    100% { bottom: 0; }
+}
+::ng-deep .mob-editform-width .modal-dialog .modal-content{
+    border-radius: 0%;
+    padding: 20px;
+}
+    .employee{
+        width:17.5em;
+        background-color:rgba(1,1,1,0.1) ;
+        height: fit-content;
+    }
+    .card-pic{
+        width: 80px;
+        height: 80px;
+    }
+    .picture{
+        height: 120px;
+        width:120px;
+    }
+    .employee-name{
+        font-size:0.8rem;
+        font-weight:500;
+        word-spacing: 1px;
+    }
+    .employee-name-a{
+        color:black ;
+    }
+    .job-title{
+        font-size:0.7rem;
+        color: rgba(1,1,1,0.6);
+        word-spacing: 1px;
+    }
+    .department{
+        font-size:0.7rem;
+        color: rgba(1,1,1,0.6);
+        word-spacing: 1px;
+    }
+    .contact-icon{
+        color:rgba(1,1,1,0.3);
+        font-size: 0.8rem;
+    }
+    
+    
+    
+    .dark-modal .modal-content {
+        background-color: #292b2c;
+        color: white;
+    }
+    .dark-modal .close {
+        color: white;
+    }
+    .light-blue-backdrop {
+        background-color: #5cb3fd;
+    }
+    
+    .show-employee-modal-picture{
+        height:10rem;
+        width:10rem;
+        border-radius: 10px;
+    }
+    .show-employee-modal-label{
+        color:black;
+        font-size: small;
+    }
+    .row>*{
+        padding:0px;
+    }
+    .br{
+        border-bottom: 1px solid;
+    }
+    .btns button{
+        border: none;
+        background-color: transparent;
+        color: #5cb3fd;
+    }
+    .btns button:nth-child(2){
+        color: #292b2c;
+    }
+    
+    .skype{
+        width: 26px;
+        height: 26px;
+        color: #292b2c;
+    }
+    .btn-close{
+        right: 2%;
+    }
+    @media (max-width: 480px){
+        .mob-filt{
+            display: none;
+        }
+        .contact-icon{
+            display: none;
+        }
+        .employee-name {
+        
+            padding-top: 30px;
+            font-size: 110%;
+            font-weight: normal;
+        }
+    
+          
+    }

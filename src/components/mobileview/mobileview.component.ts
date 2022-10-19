@@ -18,7 +18,7 @@ export class MobileviewComponent implements OnInit {
 
   openVerticallyCentered(content: any){
     this.employeeService.employeeFormTitle="Add Employee"
-    this.modalService.open(content, { centered: true });  
+    this.modalService.open(content, {windowClass : 'mob-form-width' });  
   }
 
 

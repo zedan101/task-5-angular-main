@@ -15,6 +15,8 @@ import { FiltersPipe } from './pipes/filters.pipe';
 import { MobileviewComponent } from '../components/mobileview/mobileview.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { MobilemainComponent } from '../components/mobilemain/mobilemain.component';
+import { EditempmobileComponent } from '../components/editempmobile/editempmobile.component';
+import { EditdatamobComponent } from '../components/editdatamob/editdatamob.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MobilemainComponent } from '../components/mobilemain/mobilemain.compone
     FiltersPipe,
     MobileviewComponent,
     SidebarComponent,
-    MobilemainComponent
+    MobilemainComponent,
+    EditempmobileComponent,
+    EditdatamobComponent
     ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-between">
-  <app-sidebar class="position-relative"></app-sidebar>
+<div class="d-flex justify-content-between topbar">
+  <app-sidebar class="position-relative ms-0"></app-sidebar>
   <input
     type="text"
     class="search-input mt-5 ms-5 my-auto"
@@ -14,8 +14,8 @@
   </div>
 </div>
 
-
-  <div *ngIf="showFilter" class="ms-5 ps-4">
+  <div *ngIf="showFilter" class="filter-tgl d-flex justify-content-center ps-4">
+    <div>
     <p class="filter-para my-auto me-2">Filter by</p>
     <select id="filter" class="filter-options" [(ngModel)]="searchFilterInput">
       <option value="preferredName" class="text-capitalize">
@@ -31,8 +31,9 @@
       <option value="skypeId" class="text-capitalize">skype id</option>
     </select>
   </div>
-
-  <hr />
+  </div>
+  <hr/>
+  
   <div class="mt-2 overflow-auto">
     <button
       class="add-employee float-end text-capitalize text-decoration-none text-white fw-bold"
@@ -42,14 +43,14 @@
     </button>
   </div>
 
-  <app-mobilemain></app-mobilemain>
-  <div class="foot d-flex position-sticky py-auto justify-content-center">
+  <app-mobilemain class="overflo"></app-mobilemain>
+  <div class="foot d-flex position-fixed py-auto justify-content-center">
     <a><i class="display-4 text-primary bi bi-house-fill"></i></a>
     <a><i class="mx-5 display-4 bi bi-person-fill"></i></a>
     <a><i class="display-4 bi bi-people-fill"></i></a>
   </div>
 
-  <ng-template #addEmployee let-modal>
-    <app-popup></app-popup>
+  <ng-template  #addEmployee let-modal>
+    <app-editempmobile></app-editempmobile>
   </ng-template>
 

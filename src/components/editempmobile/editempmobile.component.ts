@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { FormControl,FormGroup,Validators} from '@angular/forms';
 import { EmpDataService } from '../../app/services/emp-data.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
-  selector: 'app-popup',
-  templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.css']
+  selector: 'app-editempmobile',
+  templateUrl: './editempmobile.component.html',
+  styleUrls: ['./editempmobile.component.css']
 })
-export class PopUpComponent implements OnInit {
+export class EditempmobileComponent implements OnInit {
   imageUrl:any;
+  user_image:any;
+  image_source:any;
   constructor(private employeeService:EmpDataService,private modalService: NgbModal) {}
 
   ngOnInit(): void {
@@ -77,6 +81,7 @@ export class PopUpComponent implements OnInit {
       this.employeeService.addEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }else{
+      this.employeeForm.value.picture=this.imageUrl;
       this.employeeService.setEmployee(this.employeeForm.value);
       this.modalService.dismissAll();
     }
@@ -105,7 +110,7 @@ export class PopUpComponent implements OnInit {
     return this.employeeForm.get('skypeId');
   }
   get picture(){
-    return this.employeeForm.get('picture');
+    return this.imageUrl;
   }
   get jobTitle(){
     return this.employeeForm.get('jobTitle');
@@ -119,6 +124,21 @@ export class PopUpComponent implements OnInit {
 
   setPrefName(firstName:any,lastName:any):void{
     this.employeeForm.get('preferredName').setValue(firstName+" "+lastName)
+  }
+
+  
+  selectImage(e:any)
+  {
+    if(e.target.files)
+    {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=(event:any)=>{
+      console.log(event.target.result);
+      this.imageUrl = event.target.result;
+    }
+    }
+
   }
 
 }

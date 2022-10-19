@@ -4,7 +4,6 @@
     height: fit-content;
 }
 
-
 .picture{
     height:80px;
     width:80px;
@@ -88,4 +87,6 @@
         font-size: 110%;
         font-weight: normal;
     }
+
+      
 }

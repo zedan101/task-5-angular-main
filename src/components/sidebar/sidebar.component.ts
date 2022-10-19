@@ -6,7 +6,7 @@ import * as Filters from '../../assets/static files/data';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
