@@ -1,8 +1,4 @@
-.employees{
-    border: 1px solid rgba(1,1,1,0.2);
-    box-sizing: content-box;
-    height:50vh;
-}
+
 .mobile{
     display: none;
 }

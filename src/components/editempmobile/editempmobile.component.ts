@@ -75,6 +75,10 @@ export class EditempmobileComponent implements OnInit {
     picture: new FormControl(''),
   })
 
+  clearModal(){
+    this.employeeForm.reset();
+    this.imageUrl="../../assets/profile.png"
+  }
   saveEmployee():void{
     
     if(!this.employeeForm.get('id').value){
