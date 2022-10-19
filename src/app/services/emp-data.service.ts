@@ -54,11 +54,23 @@ export class EmpDataService {
   sendEditData(employee:any){
     this.editData.next(employee);
   }  
-  
-  setEmployee(employee:any){
+  deleteItem(employee:any){
+    console.log(employee);
+    let employees=this.getEmployees();
+    console.log(employees);
+    let index=employees.findIndex((e:any)=>e.id==employee.id)
+    if (index !== -1) {
+      employees.splice(index, 1);
+    }
+    console.log(employees);
+    window.localStorage.setItem("employees", JSON.stringify(employees));
+    this.sendAllEmployees(employees)
+  }
+  setEmployee(employee:any,img:any){
     let employees=this.getEmployees();
     let index=employees.findIndex((e:any)=>e.id==employee.id);
     employees[index]=employee;
+    employee[index].picture=img;
     this.pushEmployees(employees);
     this.sendAllEmployees(employees);
   }

@@ -26,4 +26,7 @@ export class EditdatamobComponent implements AfterViewInit {
   triggerEdit():void{
     this.employeeService.sendEditData(this.employee)           
   }
+  delete(){
+    this.employeeService.deleteItem(this.employee)
+  }
 }

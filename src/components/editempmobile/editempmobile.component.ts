@@ -81,8 +81,8 @@ export class EditempmobileComponent implements OnInit {
       this.employeeService.addEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }else{
-      this.employeeForm.value.picture=this.imageUrl;
-      this.employeeService.setEmployee(this.employeeForm.value);
+      
+      this.employeeService.setEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }
     this.updateFilterCount()
@@ -110,7 +110,7 @@ export class EditempmobileComponent implements OnInit {
     return this.employeeForm.get('skypeId');
   }
   get picture(){
-    return this.imageUrl;
+    return this.employeeForm.get('picture')
   }
   get jobTitle(){
     return this.employeeForm.get('jobTitle');
@@ -129,6 +129,7 @@ export class EditempmobileComponent implements OnInit {
   
   selectImage(e:any)
   {
+    
     if(e.target.files)
     {
     var reader = new FileReader();

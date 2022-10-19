@@ -77,7 +77,7 @@ export class PopUpComponent implements OnInit {
       this.employeeService.addEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }else{
-      this.employeeService.setEmployee(this.employeeForm.value);
+      this.employeeService.setEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }
     this.updateFilterCount()
