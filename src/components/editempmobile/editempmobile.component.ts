@@ -12,8 +12,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditempmobileComponent implements OnInit {
   imageUrl:any;
-  user_image:any;
-  image_source:any;
+  
   constructor(private employeeService:EmpDataService,private modalService: NgbModal) {}
 
   ngOnInit(): void {
@@ -59,6 +58,7 @@ export class EditempmobileComponent implements OnInit {
       picture:new FormControl(employee.picture),
       
     })
+    this.imageUrl=employee.picture
   }
 
   employeeForm:any = new FormGroup({

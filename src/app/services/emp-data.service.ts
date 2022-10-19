@@ -70,7 +70,7 @@ export class EmpDataService {
     let employees=this.getEmployees();
     let index=employees.findIndex((e:any)=>e.id==employee.id);
     employees[index]=employee;
-    employee[index].picture=img;
+    employees[index].picture=img;
     this.pushEmployees(employees);
     this.sendAllEmployees(employees);
   }
