@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EmpDataService } from '../../app/services/emp-data.service';
+import { EmpDataService } from '../../services/emp-data.service';
 
 @Component({
   selector: 'app-mobileview',
@@ -17,13 +17,13 @@ export class MobileviewComponent implements OnInit {
   }
 
   openVerticallyCentered(content: any){
-    this.employeeService.employeeFormTitle="Add Employee"
+    this.employeeService.employeeFormTitle="Add Employee";
     this.modalService.open(content, {windowClass : 'mob-form-width' });  
   }
 
 
   showEmployees():void{
-    this.employeeService.sendAllEmployees(this.employeeService.getEmployees())
+    this.employeeService.sendAllEmployees(this.employeeService.getEmployees());
   }
 
   showfilter()
@@ -38,7 +38,7 @@ export class MobileviewComponent implements OnInit {
     let employees=this.employeeService.getEmployees()
     const re = new RegExp(this.searchInput, 'gi');
     let searchedEmployees = employees.filter((emp: any) => emp[this.searchFilterInput].match(re));
-    this.employeeService.sendSearchEmployees(searchedEmployees)
+    this.employeeService.sendSearchEmployees(searchedEmployees);
   }
 
 }

@@ -1,5 +1,5 @@
 import { HostListener,Component, OnInit } from '@angular/core';
-import {EmpDataService} from '../../app/services/emp-data.service';
+import {EmpDataService} from '../../services/emp-data.service';
 
 @Component({
   selector: 'app-employees',
@@ -14,7 +14,7 @@ export class EmployeesComponent implements OnInit {
         this.scrWidth = window.innerWidth;
   }
   constructor(private employeeService:EmpDataService) {
-    this.getScreenSize()
+    this.getScreenSize();
     if(this.scrWidth<=480){
       this.scrCheck=true;
     }
@@ -23,19 +23,19 @@ export class EmployeesComponent implements OnInit {
     this.employees = JSON.parse(window.localStorage.getItem("employees") || "[]");
 
     this.employeeService.filteredEmployees.subscribe((employees:any)=>{
-      this.employees=employees
+      this.employees=employees;
     })
 
     this.employeeService.showAllEmployees.subscribe((employees:any)=>{
-      this.employees=employees
+      this.employees=employees;
     })
 
     this.employeeService.AlphabetEmployees.subscribe((employees:any)=>{
-      this.employees=employees
+      this.employees=employees;
     })
 
     this.employeeService.searchEmployees.subscribe((employees:any)=>{
-      this.employees=employees
+      this.employees=employees;
     })
   }
   employees:any = [];

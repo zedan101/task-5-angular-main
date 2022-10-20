@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Filters from '../../assets/static files/data';
+import * as Filters from '../../../assets/static-files/data';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { FormControl,FormGroup,Validators} from '@angular/forms';
-import { EmpDataService } from '../../app/services/emp-data.service';
+import { EmpDataService } from '../../services/emp-data.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -18,28 +17,28 @@ export class EditempmobileComponent implements OnInit {
   ngOnInit(): void {
     this.employeeService.editData.subscribe((employee:any)=>{
       this.getEmployeeData=employee;
-      this.employeeData(this.getEmployeeData)
+      this.employeeData(this.getEmployeeData);
     })
-    this.departmentValue=this.employeeForm.get('department').setValue('IT')
-    this.jobTitleValue=this.employeeForm.get('jobTitle').setValue(this.jobTitlesList[0])
-    this.employeeForm.get('office').setValue(this.officeList[0])
+    this.departmentValue=this.employeeForm.get('department').setValue('IT');
+    this.jobTitleValue=this.employeeForm.get('jobTitle').setValue(this.jobTitlesList[0]);
+    this.employeeForm.get('office').setValue(this.officeList[0]);
   }
 
   departmentValue:any;
   jobTitleValue:any;
-  getEmployeeData:any={}
-  officeList:any[]=["Seattle","India"]
-  jobTitlesList:any[]=["Sharepoint Practice Head",".net development lead","recruiting expert","BI developer", "business analyst"]
-  employeeFormTitle:any=this.employeeService.employeeFormTitle
+  getEmployeeData:any={};
+  officeList:any[]=["Seattle","India"];
+  jobTitlesList:any[]=["Sharepoint Practice Head",".net development lead","recruiting expert","BI developer", "business analyst"];
+  employeeFormTitle:any=this.employeeService.employeeFormTitle;
 
   closeModal():void{
     this.modalService.dismissAll();
   }
 
   updateFilterCount():void{
-    let filters=document.querySelectorAll('.filter-li')
+    let filters=document.querySelectorAll('.filter-li');
     filters.forEach((filter:any)=>{
-      filter.children[1].textContent=`(${this.employeeService.getCount(filter.children[0].textContent)})`
+      filter.children[1].textContent=`(${this.employeeService.getCount(filter.children[0].textContent)})`;
     })
   }
 
@@ -58,7 +57,7 @@ export class EditempmobileComponent implements OnInit {
       picture:new FormControl(employee.picture),
       
     })
-    this.imageUrl=employee.picture
+    this.imageUrl=employee.picture;
   }
 
   employeeForm:any = new FormGroup({
@@ -77,7 +76,7 @@ export class EditempmobileComponent implements OnInit {
 
   clearModal(){
     this.employeeForm.reset();
-    this.imageUrl="../../assets/profile.png"
+    this.imageUrl="../../../assets/images/profile.png";
   }
   saveEmployee():void{
     
@@ -89,8 +88,9 @@ export class EditempmobileComponent implements OnInit {
       this.employeeService.setEmployee(this.employeeForm.value,this.imageUrl);
       this.modalService.dismissAll();
     }
-    this.updateFilterCount()
+    this.updateFilterCount();
   }
+
 
   get id(){
     return this.employeeForm.get('id')
@@ -113,21 +113,11 @@ export class EditempmobileComponent implements OnInit {
   get skypeId(){
     return this.employeeForm.get('skypeId');
   }
-  get picture(){
-    return this.employeeForm.get('picture')
-  }
-  get jobTitle(){
-    return this.employeeForm.get('jobTitle');
-  }
-  get department(){
-    return this.employeeForm.get('department');
-  }
-  get office(){
-    return this.employeeForm.get('office');
-  }
+
+
 
   setPrefName(firstName:any,lastName:any):void{
-    this.employeeForm.get('preferredName').setValue(firstName+" "+lastName)
+    this.employeeForm.get('preferredName').setValue(firstName+" "+lastName);
   }
 
   

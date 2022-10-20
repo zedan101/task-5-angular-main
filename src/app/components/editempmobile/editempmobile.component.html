@@ -18,7 +18,7 @@
     <div class="add-photo ">
       <div class="profile-img ">
           <img [src]="imageUrl" *ngIf="imageUrl">
-          <img src="../../assets/profile.png" *ngIf="!imageUrl">
+          <img src="../../../assets/images/profile.png" *ngIf="!imageUrl">
       </div>
       <div class="position-relative">
           <span class="photo-label position-absolute" *ngIf="!imageUrl">Add Photo</span>
@@ -190,22 +190,6 @@
       
     </div>
 
-    <!-- profile image
-
-    <div class="row mb-3">
-      
-        <label for="Image">Profile Picture (Image URL)</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Image URL here"
-          name="picture"
-          required
-          formControlName="picture"
-        />
-        
-      
-    </div> -->
 
     <!-- Submit button -->
     <div class="row">

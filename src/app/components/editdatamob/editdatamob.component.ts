@@ -1,6 +1,6 @@
 import { Component, Input,AfterViewInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EmpDataService } from '../../app/services/emp-data.service';
+import { EmpDataService } from '../../services/emp-data.service';
 
 @Component({
   selector: 'app-editdatamob',
@@ -19,14 +19,14 @@ export class EditdatamobComponent implements AfterViewInit {
     }
   }
   openVerticallyCentered(content: any) {
-    this.employeeService.employeeFormTitle="edit employee"
+    this.employeeService.employeeFormTitle="edit employee";
   this.modalService.open(content, {windowClass : 'mob-editform-width' });
   }
 
   triggerEdit():void{
-    this.employeeService.sendEditData(this.employee)           
+    this.employeeService.sendEditData(this.employee);           
   }
   delete(){
-    this.employeeService.deleteItem(this.employee)
+    this.employeeService.deleteItem(this.employee);
   }
 }

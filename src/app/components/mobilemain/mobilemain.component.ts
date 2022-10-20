@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpDataService } from '../../app/services/emp-data.service';
+import { EmpDataService } from '../../services/emp-data.service';
 @Component({
   selector: 'app-mobilemain',
   templateUrl: './mobilemain.component.html',
@@ -12,16 +12,16 @@ export class MobilemainComponent implements OnInit {
   ngOnInit(): void {
     this.createAlphabetArray();
   }
-  alphabets:string[]=[]
+  alphabets:string[]=[];
   public createAlphabetArray():void{
     for(let i=97;i<=122;i++){
-      this.alphabets.push(String.fromCodePoint(i))
+      this.alphabets.push(String.fromCodePoint(i));
     }
   }
 
   searchByAlphabets(alphabet:any):void{
-    let employees=this.employeeService.getEmployees()
-    let searchedEmployees=employees.filter((employee:any)=>employee.preferredName.toLowerCase().startsWith(alphabet))
-    this.employeeService.sendAlphabetEmployees(searchedEmployees)
+    let employees=this.employeeService.getEmployees();
+    let searchedEmployees=employees.filter((employee:any)=>employee.preferredName.toLowerCase().startsWith(alphabet));
+    this.employeeService.sendAlphabetEmployees(searchedEmployees);
   }
 }

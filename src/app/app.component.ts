@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as Filters from '../assets/static files/data';
+import * as Filters from '../assets/static-files/data';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
