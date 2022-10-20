@@ -83,12 +83,7 @@ export class PopUpComponent implements OnInit {
     this.updateFilterCount()
   }
 
-  get id(){
-    return this.employeeForm.get('id')
-  }
-  get preferredName(){
-    return this.employeeForm.get('preferredName');
-  }
+
   get firstName(){ 
     return this.employeeForm.get('firstName');
   }
