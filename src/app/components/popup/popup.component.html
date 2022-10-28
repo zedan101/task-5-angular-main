@@ -6,6 +6,27 @@
 <div class="modal-body">
   <form class="px-3" [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
 
+
+
+    <!-- add photo  -->
+    <div class="add-photo mb-3 ">
+      <div class="profile-img ">
+          <img [src]="imageUrl" *ngIf="imageUrl">
+          <img src="../../../assets/images/profile.png" *ngIf="!imageUrl">
+      </div>
+      <div class="position-relative">
+          <span class="photo-label position-absolute" *ngIf="!imageUrl">Add Photo</span>
+          <input class="file-input form-control position-absolute" type="file" (change)="selectImage($event)"
+          placeholder="Image URL here"
+          name="picture"
+          required
+          >
+      </div>
+  </div>
+
+
+
+
     <!-- Names -->
     <div class="row mb-3">
       <div class="form-floating col">
@@ -74,14 +95,6 @@
       </div>
     </div>
 
-    <!-- profile image -->
-
-    <div class="row mb-3">
-      <div class="form-floating">
-          <input type="text" class="form-control" placeholder="Image URL here" name="picture" required formControlName="picture">
-            <label for="Image">Profile Picture (Image URL)</label>
-      </div>
-    </div>
 
     <!-- Submit button -->
     <div class="row">

@@ -38,6 +38,12 @@
 
 <ng-template #content let-modal>
   <div class="modal-body mx-auto my-3">
+    <button
+    type="button"
+    class="btn-close position-absolute  "
+    aria-label="Close"
+    (click)="modal.close('Close click')"
+    ></button>
     <img class="picture" src={{employee.picture}} alt="profile" />
     <div class="row py-1">
       <div class="d-flex">
@@ -84,6 +90,7 @@
     <button
     type="button"
     class="col display-4 fw-bold m-2"
+    (click)="delete()"
     (click)="modal.close('Close click')"
   >
     <i class="bi bi-trash-fill"></i>

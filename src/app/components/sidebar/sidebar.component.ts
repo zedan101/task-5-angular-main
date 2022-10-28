@@ -6,11 +6,13 @@ import * as Filters from '../../../assets/static-files/data';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  filters=Filters.filters;
+
   
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  filters=Filters.filters;
+  
 }

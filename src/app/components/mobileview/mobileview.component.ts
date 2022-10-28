@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EmpDataService } from '../../services/emp-data.service';
 
@@ -10,11 +9,19 @@ import { EmpDataService } from '../../services/emp-data.service';
 })
 export class MobileviewComponent implements OnInit {
   showFilter  =false;
+  searchInput:string;
+  searchFilterInput:string="preferredName";
+
+
   constructor(private modalService: NgbModal,private employeeService:EmpDataService) {}
+
+
 
   ngOnInit(): void {
    
   }
+
+
 
   openVerticallyCentered(content: any){
     this.employeeService.employeeFormTitle="Add Employee";
@@ -22,17 +29,18 @@ export class MobileviewComponent implements OnInit {
   }
 
 
+
   showEmployees():void{
     this.employeeService.sendAllEmployees(this.employeeService.getEmployees());
   }
+
+
 
   showfilter()
   {
     this.showFilter = !this.showFilter;
   }
 
-  searchInput:string;
-  searchFilterInput:string="preferredName";
 
   search():void{
     let employees=this.employeeService.getEmployees()

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators} from '@angular/forms';
 import { EmpDataService } from '../../services/emp-data.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {Employee} from '../../model/employee.model';
 
 @Component({
   selector: 'app-popup',
@@ -9,8 +10,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./popup.component.css']
 })
 export class PopUpComponent implements OnInit {
-  imageUrl:any;
+  imageUrl:string;
+  departmentValue:string;
+  jobTitleValue:string;
+  getEmployeeData:Employee;
+  officeList:any[]=["Seattle","India"];
+  jobTitlesList:any[]=["Sharepoint Practice Head",".net development lead","recruiting expert","BI developer", "business analyst"];
+  employeeFormTitle:string=this.employeeService.employeeFormTitle;
+
+
   constructor(private employeeService:EmpDataService,private modalService: NgbModal) {}
+
 
   ngOnInit(): void {
     this.employeeService.editData.subscribe((employee:any)=>{
@@ -22,16 +32,13 @@ export class PopUpComponent implements OnInit {
     this.employeeForm.get('office').setValue(this.officeList[0]);
   }
 
-  departmentValue:any;
-  jobTitleValue:any;
-  getEmployeeData:any={};
-  officeList:any[]=["Seattle","India"];
-  jobTitlesList:any[]=["Sharepoint Practice Head",".net development lead","recruiting expert","BI developer", "business analyst"];
-  employeeFormTitle:any=this.employeeService.employeeFormTitle;
+
 
   closeModal():void{
     this.modalService.dismissAll();
   }
+
+
 
   updateFilterCount():void{
     let filters=document.querySelectorAll('.filter-li');
@@ -40,7 +47,9 @@ export class PopUpComponent implements OnInit {
     })
   }
 
-  employeeData(employee:any):void{
+
+
+  employeeData(employee:Employee):void{
     this.employeeForm = new FormGroup({
       id:new FormControl(employee.id),
       preferredName: new FormControl(employee.preferredName,[Validators.required]),
@@ -55,7 +64,10 @@ export class PopUpComponent implements OnInit {
       picture:new FormControl(employee.picture),
       
     })
+    this.imageUrl=employee.picture;
   }
+
+
 
   employeeForm:any = new FormGroup({
     id: new FormControl(''),
@@ -71,6 +83,8 @@ export class PopUpComponent implements OnInit {
     picture: new FormControl(''),
   })
 
+
+
   saveEmployee():void{
     
     if(!this.employeeForm.get('id').value){
@@ -82,6 +96,8 @@ export class PopUpComponent implements OnInit {
     }
     this.updateFilterCount()
   }
+
+
 
 
   get firstName(){ 
@@ -102,8 +118,28 @@ export class PopUpComponent implements OnInit {
   
 
 
-  setPrefName(firstName:any,lastName:any):void{
+
+  setPrefName(firstName:string,lastName:string):void{
     this.employeeForm.get('preferredName').setValue(firstName+" "+lastName);
   }
+
+
+
+
+  selectImage(e:any)
+  {
+    
+    if(e.target.files)
+    {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=(event:any)=>{
+      console.log(event.target.result);
+      this.imageUrl = event.target.result;
+    }
+    }
+
+  }
+
 
 }
