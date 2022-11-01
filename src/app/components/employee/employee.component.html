@@ -4,10 +4,10 @@
   (click)="triggerEdit()"
 >
   <div>
-    <img src={{employee.picture}} class="picture p-2" />
+    <img src="{{ employee.picture }}" class="picture p-2" />
   </div>
-  <div class="p-2 pe-4 ">
-    <h5 class="employee-name text-nowrap ">
+  <div class="p-2 pe-4">
+    <h5 class="employee-name text-nowrap">
       <a href="#" class="employee-name-a text-decoration-none">{{
         employee.preferredName
       }}</a>
@@ -19,19 +19,13 @@
       {{ employee.department }} Department
     </p>
     <span class="d-flex">
-      <a href="#" class="contact-icon me-2"
-        ><i class="bi bi-phone-fill"></i
-      ></a>
+      <a href="#" class="contact-icon me-2"><i class="bi bi-phone-fill"></i></a>
       <a href="#" class="contact-icon me-2"
         ><i class="bi bi-envelope-fill"></i
       ></a>
-      <a href="#" class="contact-icon me-2"
-        ><i class="bi bi-chat-fill"></i
-      ></a>
+      <a href="#" class="contact-icon me-2"><i class="bi bi-chat-fill"></i></a>
       <a href="#" class="contact-icon me-2"><i class="fa-solid fa-star"></i></a>
-      <a href="#" class="contact-icon me-2"
-        ><i class="bi bi-heart-fill"></i
-      ></a>
+      <a href="#" class="contact-icon me-2"><i class="bi bi-heart-fill"></i></a>
     </span>
   </div>
 </div>
@@ -39,12 +33,12 @@
 <ng-template #content let-modal>
   <div class="modal-body mx-auto my-3">
     <button
-    type="button"
-    class="btn-close position-absolute  "
-    aria-label="Close"
-    (click)="modal.close('Close click')"
+      type="button"
+      class="btn-close position-absolute"
+      aria-label="Close"
+      (click)="modal.close('Close click')"
     ></button>
-    <img class="picture" src={{employee.picture}} alt="profile" />
+    <img class="picture" src="{{ employee.picture }}" alt="profile" />
     <div class="row py-1">
       <div class="d-flex">
         <p class="fw-bold text-dark me-2 mb-0">{{ employee.firstName }}</p>
@@ -57,45 +51,46 @@
       </div>
     </div>
     <div class="row py-1">
-        <div class="col">
-      <label for="email" class="show-employee-modal-label"
-        >Email</label>
-      <p class="fw-bold text-primary mb-0">{{ employee.email }}</p>
-    </div>
-      <i class="col d-flex justify-content-end bi bi-envelope-fill fs-3 mt-2"></i>
+      <div class="col">
+        <label for="email" class="show-employee-modal-label">Email</label>
+        <p class="fw-bold text-primary mb-0">{{ employee.email }}</p>
+      </div>
+      <i
+        class="col d-flex justify-content-end bi bi-envelope-fill fs-3 mt-2"
+      ></i>
     </div>
 
     <div class="row">
-        <div class="col">
-      <label for="number" class="show-employee-modal-label"
-        >Phone-Number</label>
-      <p class="text-primary fw-bold mb-0">{{ employee.phoneNumber }}</p>
-    </div>
-      <i class="col d-flex justify-content-end  bi bi-telephone-fill fs-3 mt-2"></i>
+      <div class="col">
+        <label for="number" class="show-employee-modal-label"
+          >Phone-Number</label
+        >
+        <p class="text-primary fw-bold mb-0">{{ employee.phoneNumber }}</p>
+      </div>
+      <i
+        class="col d-flex justify-content-end bi bi-telephone-fill fs-3 mt-2"
+      ></i>
     </div>
     <div class="row">
-    <div class="col">
-      <label for="skypeid" class="show-employee-modal-label"
-        >Skype ID</label
-      >
-      <p class="fw-bold text-primary mb-0">{{ employee.skypeId }}</p>
-    </div>
-    <div class="col d-flex justify-content-end mt-1 ms-2">
-    <img src="../../../assets/images/skype.svg" alt="skype" class="skype">
-    </div>
+      <div class="col">
+        <label for="skypeid" class="show-employee-modal-label">Skype ID</label>
+        <p class="fw-bold text-primary mb-0">{{ employee.skypeId }}</p>
+      </div>
+      <div class="col d-flex justify-content-end mt-1 ms-2">
+        <img src="../../../assets/images/skype.svg" alt="skype" class="skype" />
+      </div>
     </div>
   </div>
-  <div class=" btns row">
-   
+  <div class="btns row">
     <button
-    type="button"
-    class="col display-4 fw-bold m-2"
-    (click)="delete()"
-    (click)="modal.close('Close click')"
-  >
-    <i class="bi bi-trash-fill"></i>
-  </button>
-   
+      type="button"
+      class="col display-4 fw-bold m-2"
+      (click)="delete()"
+      (click)="modal.close('Close click')"
+    >
+      <i class="bi bi-trash-fill"></i>
+    </button>
+
     <button
       type="button"
       class="col display-4 edit-btn fw-bold m-2"
@@ -104,7 +99,6 @@
     >
       <i class="bi bi-pencil-fill"></i>
     </button>
- 
   </div>
 </ng-template>
 

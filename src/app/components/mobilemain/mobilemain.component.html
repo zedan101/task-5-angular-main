@@ -1,11 +1,12 @@
 <div class="row">
-    <app-employees class="col-11 employees row pt-3 ps-4"></app-employees>
-    
-    <div class="col-1" >
-      <div class="alpha-search position-fixed  mt-3">
-      <li *ngFor="let i of alphabets" ><a href="#"  (click)="searchByAlphabets(i)">{{ i }}</a><br><li>
-      </div>
-      
+  <app-employees class="col-11 employees row pt-3 ps-4"></app-employees>
+
+  <div class="col-1">
+    <div class="alpha-search position-fixed mt-3">
+      <li *ngFor="let i of alphabets">
+        <a href="#" (click)="searchByAlphabets(i)">{{ i }}</a
+        ><br />
+      </li>
     </div>
+  </div>
 </div>
- 

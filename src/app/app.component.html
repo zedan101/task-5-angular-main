@@ -1,18 +1,19 @@
 <section class="container-fluid p-0">
-<app-mobileview class="mobile m-0 p-0"></app-mobileview>
+  <app-mobileview class="mobile m-0 p-0"></app-mobileview>
 </section>
 <section class="container webview">
-  <app-header class="row "></app-header>
+  <app-header class="row"></app-header>
   <main class="row">
     <div class="filters webview col-lg-3 mt-4 p-0">
-      <app-filters *ngFor="let f of filters"
-            [filter]="f[1]"
-            [title]="f[0]"></app-filters>
+      <app-filters
+        *ngFor="let f of filters"
+        [filter]="f[1]"
+        [title]="f[0]"
+      ></app-filters>
     </div>
     <div class="col-lg-9 mt-4 webview">
       <app-search></app-search>
       <app-employees class=""></app-employees>
-      
     </div>
   </main>
 </section>

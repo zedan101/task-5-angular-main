@@ -12,191 +12,188 @@
   </div>
 
   <form class="px-3" [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
-
-       
-<!-- add photo  -->
-    <div class="add-photo ">
-      <div class="profile-img ">
-          <img [src]="imageUrl" *ngIf="imageUrl">
-          <img src="../../../assets/images/profile.png" *ngIf="!imageUrl">
+    <!-- add photo  -->
+    <div class="add-photo">
+      <div class="profile-img">
+        <img [src]="imageUrl" *ngIf="imageUrl" />
+        <img src="../../../assets/images/profile.png" *ngIf="!imageUrl" />
       </div>
       <div class="position-relative">
-          <span class="photo-label position-absolute" *ngIf="!imageUrl">Add Photo</span>
-          <input class="file-input form-control position-absolute" type="file" (change)="selectImage($event)"
+        <span class="photo-label position-absolute" *ngIf="!imageUrl"
+          >Add Photo</span
+        >
+        <input
+          class="file-input form-control position-absolute"
+          type="file"
+          (change)="selectImage($event)"
           placeholder="Image URL here"
           name="picture"
           required
-          >
+        />
       </div>
-  </div>
+    </div>
 
     <!-- Names -->
-    
-      <div class="row mb-3">
-        <label for="FirstName">First Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="First Name"
-          name="firstName"
-          formControlName="firstName"
-          required
-          #first
-          (input)="setPrefName(first.value, last.value)"
-        />
-        
-        <span
-          *ngIf="firstName && firstName.invalid && firstName.touched"
-          class="text-capitalize text-danger"
-          >invalid name</span
-        >
-      </div>
-      <div class="row mb-3">
-        <label for="LastName">Last Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Last Name"
-          name="lastName"
-          formControlName="lastName"
-          #last
-          (input)="setPrefName(first.value, last.value)"
-        />
-        
-      </div>
-    
+
+    <div class="row mb-3">
+      <label for="FirstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First Name"
+        name="firstName"
+        formControlName="firstName"
+        required
+        #first
+        (input)="setPrefName(first.value, last.value)"
+      />
+
+      <span
+        *ngIf="firstName && firstName.invalid && firstName.touched"
+        class="text-capitalize text-danger"
+        >invalid name</span
+      >
+    </div>
+    <div class="row mb-3">
+      <label for="LastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last Name"
+        name="lastName"
+        formControlName="lastName"
+        #last
+        (input)="setPrefName(first.value, last.value)"
+      />
+    </div>
+
     <!-- Perferred Name -->
     <div class="row mb-3">
-      
-        <label for="PreferredName">Preferred Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Preferred Name"
-          name="preferredName"
-          formControlName="preferredName"
-          required
-        />
-        
-      
+      <label for="PreferredName">Preferred Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Preferred Name"
+        name="preferredName"
+        formControlName="preferredName"
+        required
+      />
     </div>
     <!-- Email -->
     <div class="row mb-3">
-      
-        <label for="Email">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          placeholder="name@example.com"
-          name="email"
-          formControlName="email"
-          required
-        />
-        
-        <span
-          *ngIf="email && email.invalid && email.touched"
-          class="text-capitalize text-danger"
-          >invalid email</span
-        >
-      
+      <label for="Email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        name="email"
+        formControlName="email"
+        required
+      />
+
+      <span
+        *ngIf="email && email.invalid && email.touched"
+        class="text-capitalize text-danger"
+        >invalid email</span
+      >
     </div>
     <!-- Number and skype -->
-    
-      <div class="number  row mb-3">
-        <label for="Number">Phone Number</label>
-        <input
-          type="tel"
-          class="form-control"
-          placeholder="1234567890"
-          name="phoneNumber"
-          formControlName="phoneNumber"
-          required
-        />
-        
-        <span
-          *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched"
-          class="text-capitalize text-danger"
-          >invalid phone number</span
-        >
-      </div>
-      <div class="row mb-3">
-        <label for="SkypeID">SkypeID</label>
-        <input
-          type="tel"
-          class="form-control"
-          placeholder="live:xyz"
-          name="skypeId"
-          formControlName="skypeId"
-          required
-        />
-        
-        <span
-          *ngIf="skypeId && skypeId.invalid && skypeId.touched"
-          class="text-capitalize text-danger"
-          >invalid skypeid! should start with live:</span
-        >
-      </div>
 
-    <!-- Job title and department -->
-    
-      <div class="row mb-3">
-        <label for="JobTitle">Job Title</label>
-        <select
-          class="form-select text-capitalize"
-          formControlName="jobTitle"
-          required
-        >
-          <option
-            *ngFor="let jobTitle of jobTitlesList"
-            [ngValue]="jobTitle"
-            class="text-capitalize"
-          >
-            {{ jobTitle }}
-          </option>
-        </select>
-      
-      </div>
-      <div class="row mb-3">
-        <label for="Department">Department</label>
-        <select
-          class="form-select text-capitalize"
-          name="department"
-          formControlName="department"
-          required
-        >
-          <option value="IT" class="text-capitalize">IT</option>
-          <option value="HR" class="text-capitalize">human resources</option>
-          <option value="MD" class="text-capitalize">MD</option>
-          <option value="Sales" class="text-capitalize">sales</option>
-        </select>
-        
-      </div>
-    
-    <!-- office -->
+    <div class="number row mb-3">
+      <label for="Number">Phone Number</label>
+      <input
+        type="tel"
+        class="form-control"
+        placeholder="1234567890"
+        name="phoneNumber"
+        formControlName="phoneNumber"
+        required
+      />
+
+      <span
+        *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched"
+        class="text-capitalize text-danger"
+        >invalid phone number</span
+      >
+    </div>
     <div class="row mb-3">
-      
-        <label for="Office">Office</label>
-        <select
-          class="form-select text-capitalize"
-          name="office"
-          formControlName="office"
-          required
-        >
-          <option *ngFor="let office of officeList" [ngValue]="office">
-            {{ office }}
-          </option>
-        </select>
-        
-      
+      <label for="SkypeID">SkypeID</label>
+      <input
+        type="tel"
+        class="form-control"
+        placeholder="live:xyz"
+        name="skypeId"
+        formControlName="skypeId"
+        required
+      />
+
+      <span
+        *ngIf="skypeId && skypeId.invalid && skypeId.touched"
+        class="text-capitalize text-danger"
+        >invalid skypeid! should start with live:</span
+      >
     </div>
 
+    <!-- Job title and department -->
+
+    <div class="row mb-3">
+      <label for="JobTitle">Job Title</label>
+      <select
+        class="form-select text-capitalize"
+        formControlName="jobTitle"
+        required
+      >
+        <option
+          *ngFor="let jobTitle of jobTitlesList"
+          [ngValue]="jobTitle"
+          class="text-capitalize"
+        >
+          {{ jobTitle }}
+        </option>
+      </select>
+    </div>
+    <div class="row mb-3">
+      <label for="Department">Department</label>
+      <select
+        class="form-select text-capitalize"
+        name="department"
+        formControlName="department"
+        required
+      >
+        <option value="IT" class="text-capitalize">IT</option>
+        <option value="HR" class="text-capitalize">human resources</option>
+        <option value="MD" class="text-capitalize">MD</option>
+        <option value="Sales" class="text-capitalize">sales</option>
+      </select>
+    </div>
+
+    <!-- office -->
+    <div class="row mb-3">
+      <label for="Office">Office</label>
+      <select
+        class="form-select text-capitalize"
+        name="office"
+        formControlName="office"
+        required
+      >
+        <option *ngFor="let office of officeList" [ngValue]="office">
+          {{ office }}
+        </option>
+      </select>
+    </div>
 
     <!-- Submit button -->
     <div class="row">
-    <div class="footer d-flex justify-content-evenly">
+      <div class="footer d-flex justify-content-evenly">
         <i class="text-danger display-1 bi bi-x" (click)="clearModal()"></i>
-        <button type="submit" class="check-button" [disabled]="employeeForm.invalid"><i class="text-success display-1 bi bi-check"></i></button>
-    </div>
+        <button
+          type="submit"
+          class="check-button"
+          [disabled]="employeeForm.invalid"
+        >
+          <i class="text-success display-1 bi bi-check"></i>
+        </button>
+      </div>
     </div>
   </form>
 </section>

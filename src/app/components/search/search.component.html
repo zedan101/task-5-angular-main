@@ -1,54 +1,65 @@
 <div class="row">
-    <div class="alpha-search px-0 mt-2">
-    <button class="btn btn-primary" type="submit" (click)="showEmployees()"><img src="../../../assets/images/person.svg" alt="person"></button>
-    <button *ngFor="let i of alphabets" class="btn btn-primary" type="submit" (click)="searchByAlphabets(i)">{{ i }}</button>
-</div>
+  <div class="alpha-search px-0 mt-2">
+    <button class="btn btn-primary" type="submit" (click)="showEmployees()">
+      <img src="../../../assets/images/person.svg" alt="person" />
+    </button>
+    <button
+      *ngFor="let i of alphabets"
+      class="btn btn-primary"
+      type="submit"
+      (click)="searchByAlphabets(i)"
+    >
+      {{ i }}
+    </button>
+  </div>
 </div>
 <div class="row search mt-4">
-  
-    <p class="col-md-1 search-para text-capitalize fw-normal ps-0 my-auto">search</p>
-    <input
-      type="text"
-      class="col-md-3 search-input mx-3 my-auto pe-lg-5"
-      placeholder="Enter any keyword"
-      [(ngModel)]="searchInput"
-      (input)="search()"
-    />
-    <button
-      href="#"
-      class="col-md-1 clear-button text-capitalize text-decoration-none my-auto px-3 py-1 text-white ms-3 me-5"
-      (click)="showEmployees()"
-      >clear</button
-    >
-    <p class="col-md-1 filter-para my-auto mx-2">Filter by</p>
-    <select
-      id="filter"
-      class="col-md-2 filter-options ps-2  pb-1"
-      [(ngModel)]="searchFilterInput"
-    >
-      <option value="preferredName" class="text-capitalize">
-        preferred name
-      </option>
-      <option value="firstName" class="text-capitalize">first name</option>
-      <option value="lastName" class="text-capitalize">last name</option>
-      <option value="email" class="text-capitalize">email</option>
-      <option value="jobTitle" class="text-capitalize">job title</option>
-      <option value="office" class="text-capitalize">office</option>
-      <option value="department" class="text-capitalize">department</option>
-      <option value="phoneNumber" class="text-capitalize">phone number</option>
-      <option value="skypeId" class="text-capitalize">skype id</option>
-    </select>
-    <button
-      class="col-md-2 add-employee text-capitalize ms-5 text-decoration-none text-white my-auto px-auto py-1 fw-bold"
-      (click)="openVerticallyCentered(addEmployee)"
-      >add employee</button
-    >
-  
+  <p class="col-md-1 search-para text-capitalize fw-normal ps-0 my-auto">
+    search
+  </p>
+  <input
+    type="text"
+    class="col-md-3 search-input mx-3 my-auto pe-lg-5"
+    placeholder="Enter any keyword"
+    [(ngModel)]="searchInput"
+    (input)="search()"
+  />
+  <button
+    href="#"
+    class="col-md-1 clear-button text-capitalize text-decoration-none my-auto px-3 py-1 text-white ms-3 me-5"
+    (click)="showEmployees()"
+  >
+    clear
+  </button>
+  <p class="col-md-1 filter-para my-auto mx-2">Filter by</p>
+  <select
+    id="filter"
+    class="col-md-2 filter-options ps-2 pb-1"
+    [(ngModel)]="searchFilterInput"
+  >
+    <option value="preferredName" class="text-capitalize">
+      preferred name
+    </option>
+    <option value="firstName" class="text-capitalize">first name</option>
+    <option value="lastName" class="text-capitalize">last name</option>
+    <option value="email" class="text-capitalize">email</option>
+    <option value="jobTitle" class="text-capitalize">job title</option>
+    <option value="office" class="text-capitalize">office</option>
+    <option value="department" class="text-capitalize">department</option>
+    <option value="phoneNumber" class="text-capitalize">phone number</option>
+    <option value="skypeId" class="text-capitalize">skype id</option>
+  </select>
+  <button
+    class="col-md-2 add-employee text-capitalize ms-5 text-decoration-none text-white my-auto px-auto py-1 fw-bold"
+    (click)="openVerticallyCentered(addEmployee)"
+  >
+    add employee
+  </button>
 </div>
 <p class="note mt-4">
   <b>Note:</b> Please use the advanced filter options to refine your results.
 </p>
 
 <ng-template #addEmployee let-modal>
-  <app-popup ></app-popup>
+  <app-popup></app-popup>
 </ng-template>

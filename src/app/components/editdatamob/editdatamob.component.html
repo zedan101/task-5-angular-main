@@ -13,39 +13,35 @@
       }}</a>
     </h5>
   </div>
-  <div class="bi bi-three-dots-vertical "></div>
+  <div class="bi bi-three-dots-vertical"></div>
 </div>
 
 <ng-template #content let-modal>
   <div class="modal-body mx-auto my-3">
     <button
-    type="button"
-    class="btn-close position-absolute "
-    aria-label="Close"
-    (click)="modal.close('Close click')"
+      type="button"
+      class="btn-close position-absolute"
+      aria-label="Close"
+      (click)="modal.close('Close click')"
     ></button>
-    
-   
-    
+
     <img class="mb-3 row picture" src="{{ employee.picture }}" alt="profile" />
-  
+
     <div class="row my-1 mb-3">
       <div class="d-flex mb-3">
-        <p class=" display-4 text-dark me-2 mb-0">{{ employee.firstName }}</p>
+        <p class="display-4 text-dark me-2 mb-0">{{ employee.firstName }}</p>
         <p class="display-4 text-dark mb-0">{{ employee.lastName }}</p>
       </div>
       <div class="row my-1 ps-2 mb-3">
-        <p class="fw-lighter  text-dark mb-0">{{ employee.jobTitle }}</p>
+        <p class="fw-lighter text-dark mb-0">{{ employee.jobTitle }}</p>
         <p class="fw-lighter text-dark mb-0">{{ employee.department }}</p>
         <p class="fw-lighter text-dark mb-0">{{ employee.office }}</p>
       </div>
     </div>
- 
+
     <div class="row mb-3">
       <div class="col">
-        <p class="display-4"
-          >mobile</p
-        >
+        <p class="display-4">mobile</p>
         <p class="text-primary fw-bold mb-0">{{ employee.phoneNumber }}</p>
       </div>
       <i
@@ -59,19 +55,20 @@
       </div>
       <div class="col d-flex justify-content-end mt-1 ms-2">
         <!-- <img src="../../assets/skype.svg" alt="skype" class="skype" /> -->
-        <i class="col d-flex text-primary justify-content-end bi bi-skype fs-3"></i>
+        <i
+          class="col d-flex text-primary justify-content-end bi bi-skype fs-3"
+        ></i>
       </div>
     </div>
     <div class="row py-1 mb-3">
       <div class="col">
-        <p class="display-4 ">Email</p>
+        <p class="display-4">Email</p>
         <p class="fw-bold text-primary mb-0">{{ employee.email }}</p>
       </div>
       <i
         class="col d-flex text-warning justify-content-end bi bi-envelope-fill fs-3 mt-2"
       ></i>
     </div>
-
   </div>
   <div class="btns row">
     <button
