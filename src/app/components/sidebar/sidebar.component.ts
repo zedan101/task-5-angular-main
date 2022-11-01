@@ -3,16 +3,14 @@ import * as Filters from '../../../assets/static-files/data';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  filters=Filters.filters;
+  filters = Filters.filters;
 
-  
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(Filters.filters);
   }
-
-  
 }
